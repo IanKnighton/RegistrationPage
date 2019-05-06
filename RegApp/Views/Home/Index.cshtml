@@ -1,0 +1,47 @@
+@model RegApp.Models.RegistrationModel
+
+<h2>Welcome to the Registration Page.</h2>
+<h4>Please use this page to pre-register for this years event.</h4>
+<p>The cost is $7 per adult, per night.</p>
+
+@using (Html.BeginForm("Index", "Home", FormMethod.Post))
+{
+    <div>
+        <label>Name</label>
+        @Html.TextBoxFor(m => m.Name)
+        @Html.ValidationMessageFor(m => m.Name)
+    </div>
+    <div>
+        <label>Email Address</label>
+        @Html.TextBoxFor(m => m.Email)
+        @Html.ValidationMessageFor(m => m.Email)
+    </div>
+    <div>
+        <label>Friday Night Adults</label>
+        @Html.TextBoxFor(m => m.FridayAdults)
+        @Html.ValidationMessageFor(m => m.FridayAdults)
+    </div>
+    <div>
+        <label>Friday Night Children</label>
+        @Html.TextBoxFor(m => m.FridayChildren)
+        @Html.ValidationMessageFor(m => m.FridayChildren)
+    </div>
+    <div>
+        <label>Saturday Night Adults</label>
+        @Html.TextBoxFor(m => m.SaturdayAdults)
+        @Html.ValidationMessageFor(m => m.SaturdayAdults)
+    </div>
+    <div>
+        <label>Saturday Night Children</label>
+        @Html.TextBoxFor(m => m.SaturdayChildren)
+        @Html.ValidationMessageFor(m => m.SaturdayChildren)
+    </div>
+    <div>
+        <label>Total Vehicles</label>
+        @Html.TextBoxFor(m => m.Vehicles)
+        @Html.ValidationMessageFor(m => m.Vehicles)
+    </div>
+    <div>
+        <input type="submit" value="Submit" />
+    </div>
+}

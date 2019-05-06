@@ -1,0 +1,14 @@
+@model RegApp.Models.PaymentModel
+
+<script src="https://js.stripe.com/v3/"></script>
+
+Redirecting to Stripe...
+
+<script>
+    var stripe = Stripe('pk_test_YOUR_KEY');
+    stripe.redirectToCheckout({
+        sessionId: '@Model.ChargeID',
+    }).then(function (result) {
+        result.error.message = "Oops! Looks like something went wrong. Please try again later."
+    });
+</script>
